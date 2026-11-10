@@ -55,17 +55,17 @@ export default function ClampGenerator({ onToast }) {
 
   return (
     <div className="max-w-3xl mx-auto animate-in fade-in slide-in-from-bottom-4 duration-500">
-      <header className="mb-12 text-center">
-        <h2 className="text-4xl font-black mb-2 tracking-tight text-stone-900 dark:text-stone-50">
+      <header className="mb-10">
+        <h2 className="text-[34px] sm:text-[50px] font-normal mb-4 tracking-[-0.055em] leading-[0.9] text-stone-900 dark:text-stone-50">
           CSS clamp()
         </h2>
-        <p className="text-[13px] font-mono text-stone-500 dark:text-stone-400">
+        <p className="text-[17px] tracking-[-0.01em] text-stone-500 dark:text-stone-400">
           Linear fluid sizing between viewport bounds (min/max in px, output rem
           or px).
         </p>
       </header>
 
-      <div className="bg-white dark:bg-stone-900 p-6 border border-stone-200 dark:border-stone-800 space-y-6 font-mono text-sm">
+      <div className="bg-white dark:bg-stone-800 p-6 sm:p-8 rounded-3xl space-y-6 font-mono text-sm">
         <div className="grid sm:grid-cols-2 gap-4">
           <div>
             <label className="block text-[11px] text-stone-500 uppercase tracking-[0.18em] mb-1">

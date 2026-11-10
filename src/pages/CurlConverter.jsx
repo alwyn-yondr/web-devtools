@@ -135,17 +135,17 @@ export default function CurlConverter({ onToast }) {
 
   return (
     <div className="max-w-3xl mx-auto animate-in fade-in slide-in-from-bottom-4 duration-500">
-      <header className="mb-12 text-center">
-        <h2 className="text-4xl font-black mb-2 tracking-tight text-stone-900 dark:text-stone-50">
+      <header className="mb-10">
+        <h2 className="text-[34px] sm:text-[50px] font-normal mb-4 tracking-[-0.055em] leading-[0.9] text-stone-900 dark:text-stone-50">
           cURL → fetch / axios
         </h2>
-        <p className="text-[13px] font-mono text-stone-500 dark:text-stone-400">
+        <p className="text-[17px] tracking-[-0.01em] text-stone-500 dark:text-stone-400">
           Heuristic converter for common flags. Multipart, cookies, and exotic
           options are skipped with a warning.
         </p>
       </header>
 
-      <div className="bg-white dark:bg-stone-900 p-6 border border-stone-200 dark:border-stone-800 space-y-4">
+      <div className="bg-white dark:bg-stone-800 p-6 sm:p-8 rounded-3xl space-y-4">
         <textarea
           value={input}
           onChange={(e) => setInput(e.target.value)}
@@ -171,7 +171,7 @@ export default function CurlConverter({ onToast }) {
           { title: "axios", code: `import axios from "axios";\n\n${axiosCode}` },
         ].map((b) => (
           <div key={b.title}>
-            <span className="block text-[11px] font-mono text-stone-500 uppercase tracking-[0.18em] mb-2">
+            <span className="block text-sm text-stone-500 dark:text-stone-400 mb-2">
               {b.title}
             </span>
             <CopyPre

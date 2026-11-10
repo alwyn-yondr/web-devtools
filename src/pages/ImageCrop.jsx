@@ -35,7 +35,7 @@ const INPUT_CLASS =
   "w-full px-3 py-2 bg-white dark:bg-stone-900 border border-stone-300 dark:border-stone-700 font-mono text-sm focus:outline-none focus:ring-1 focus:ring-stone-500 dark:focus:ring-stone-400 text-stone-900 dark:text-stone-100";
 
 const LABEL_CLASS =
-  "block text-[11px] font-mono text-stone-500 dark:text-stone-400 uppercase tracking-[0.18em] mb-2";
+  "block text-sm text-stone-500 dark:text-stone-400 mb-2";
 
 const STAGE_DOTS_CLASS =
   "relative border border-stone-200 dark:border-stone-700 bg-stone-100 dark:bg-stone-950 flex justify-center items-center overflow-hidden p-4 min-h-[280px] [background-image:radial-gradient(#d6d3d1_1px,transparent_1px)] dark:[background-image:radial-gradient(#44403c_1px,transparent_1px)] [background-size:16px_16px]";
@@ -784,19 +784,19 @@ export default function ImageCrop({ onToast }) {
 
   return (
     <div className="max-w-4xl mx-auto animate-in fade-in slide-in-from-bottom-4 duration-500">
-      <header className="mb-12 text-center">
-        <h2 className="text-4xl font-black mb-2 tracking-tight text-stone-900 dark:text-stone-50">
+      <header className="mb-10">
+        <h2 className="text-[34px] sm:text-[50px] font-normal mb-4 tracking-[-0.055em] leading-[0.9] text-stone-900 dark:text-stone-50">
           Crop
         </h2>
-        <p className="text-[13px] font-mono text-stone-500 dark:text-stone-400">
+        <p className="text-[17px] tracking-[-0.01em] text-stone-500 dark:text-stone-400">
           Rect, circle, or polygon crop — fill outside with color or leave it transparent.
         </p>
       </header>
 
       <div className="space-y-6">
-        <section className="bg-white dark:bg-stone-900 p-6 border border-stone-200 dark:border-stone-800 space-y-4">
+        <section className="bg-white dark:bg-stone-800 p-6 sm:p-8 rounded-3xl space-y-4">
           <div className="flex items-center justify-between gap-3">
-            <h3 className="text-[11px] font-mono text-stone-500 dark:text-stone-400 uppercase tracking-[0.18em]">
+            <h3 className="text-sm text-stone-500 dark:text-stone-400">
               Image
             </h3>
             {asset && (
@@ -865,8 +865,8 @@ export default function ImageCrop({ onToast }) {
 
         {asset && (
           <>
-            <section className="bg-white dark:bg-stone-900 p-6 border border-stone-200 dark:border-stone-800 space-y-5">
-              <h3 className="text-[11px] font-mono text-stone-500 dark:text-stone-400 uppercase tracking-[0.18em]">
+            <section className="bg-white dark:bg-stone-800 p-6 sm:p-8 rounded-3xl space-y-5">
+              <h3 className="text-sm text-stone-500 dark:text-stone-400">
                 Settings
               </h3>
 
@@ -1064,9 +1064,9 @@ export default function ImageCrop({ onToast }) {
               </div>
             </section>
 
-            <section className="bg-white dark:bg-stone-900 p-6 border border-stone-200 dark:border-stone-800 space-y-4">
+            <section className="bg-white dark:bg-stone-800 p-6 sm:p-8 rounded-3xl space-y-4">
               <div className="flex flex-wrap items-center justify-between gap-2">
-                <h3 className="text-[11px] font-mono text-stone-500 dark:text-stone-400 uppercase tracking-[0.18em]">
+                <h3 className="text-sm text-stone-500 dark:text-stone-400">
                   Crop
                 </h3>
                 <span className="text-[10px] font-mono text-stone-400 uppercase tracking-tighter">
@@ -1105,7 +1105,7 @@ export default function ImageCrop({ onToast }) {
 
               <div>
                 <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
-                  <h3 className="text-[11px] font-mono text-stone-500 dark:text-stone-400 uppercase tracking-[0.18em]">
+                  <h3 className="text-sm text-stone-500 dark:text-stone-400">
                     Result
                   </h3>
                 </div>

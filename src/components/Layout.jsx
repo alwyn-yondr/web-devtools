@@ -2,7 +2,6 @@ import React, { useEffect, useMemo, useRef, useState, Suspense } from "react";
 import { Outlet, NavLink, useLocation, useNavigate } from "react-router-dom";
 import {
   Check,
-  Wrench,
   Command,
   MagnifyingGlass,
   Sun,
@@ -19,6 +18,7 @@ import {
 import { subscribeToolModuleLoading, isToolModuleLoading } from "../utils/lazyTool";
 import ToolLoadingFallback from "./ToolLoadingFallback";
 import ToolErrorBoundary from "./ToolErrorBoundary";
+import YondrLogo from "./YondrLogo";
 
 export default function Layout({ toast }) {
   const location = useLocation();
@@ -102,7 +102,7 @@ export default function Layout({ toast }) {
       body.classList.remove("dark");
     }
 
-    const themeColor = shouldUseDark ? "#1c1917" : "#f5f5f4";
+    const themeColor = shouldUseDark ? "#141414" : "#f9f8f6";
     document
       .querySelectorAll('meta[name="theme-color"]')
       .forEach((meta) => meta.setAttribute("content", themeColor));
@@ -253,32 +253,31 @@ export default function Layout({ toast }) {
   return (
     <div
       data-app-shell
-      className="min-h-screen bg-stone-100 dark:bg-stone-900 text-stone-900 dark:text-stone-100 selection:bg-stone-200 flex flex-col"
+      className="min-h-screen bg-stone-100 dark:bg-stone-900 text-stone-900 dark:text-stone-100 flex flex-col"
     >
       {toast && (
         <div className="fixed top-6 left-1/2 -translate-x-1/2 z-50 animate-in fade-in slide-in-from-top-2">
-          <div className="bg-stone-900 dark:bg-stone-100 text-white dark:text-stone-900 px-6 pl-3 py-3 border border-stone-700 dark:border-stone-300 flex items-center gap-3 font-mono text-xs tracking-tight">
-            <Check size={18} weight="thin" className="text-white dark:text-stone-900" />{" "}
+          <div className="bg-stone-900 dark:bg-stone-100 text-stone-100 dark:text-stone-900 pl-2 pr-5 py-2 rounded-full flex items-center gap-2.5 text-[15px]">
+            <span className="grid place-items-center size-7 rounded-full bg-mint text-stone-900">
+              <Check size={14} weight="bold" />
+            </span>
             {toast}
           </div>
         </div>
       )}
 
-      <header className="sticky top-0 z-40 flex items-center px-4 sm:px-6 h-16 border-stone-300/80 border-b dark:border-stone-700 bg-white/90 dark:bg-stone-900/95 ">
+      <header className="sticky top-0 z-40 flex items-center px-4 sm:px-6 h-16 bg-stone-100/90 dark:bg-stone-900/90 backdrop-blur">
         <div className="relative flex items-center justify-between w-full max-w-6xl mx-auto">
           <div className="flex items-center gap-3 sm:gap-4 min-w-0">
             <NavLink
               to="/"
-              className="flex items-center gap-2 font-black text-lg sm:text-xl tracking-tight text-stone-900 dark:text-stone-50 uppercase"
+              className="group flex items-center gap-2.5 text-xl tracking-[-0.045em] text-stone-900 dark:text-stone-50"
             >
-              <Wrench size={22} weight="thin" /> DevKit
+              <YondrLogo className="size-10 shrink-0" /> DevKit
             </NavLink>
-            <div className="hidden sm:flex items-center text-xs sm:text-sm font-mono text-stone-600 dark:text-stone-400 truncate">
-              <span className="mx-1 text-stone-400 dark:text-stone-700">/</span>
-              <span className="text-stone-900 dark:text-stone-100 flex items-center gap-1.5 min-w-0">
-                {displayItem && (
-                  <displayItem.icon size={14} className="text-stone-500 shrink-0" />
-                )}
+            <div className="hidden md:flex items-center text-[15px] truncate">
+              <span className="mr-2 text-stone-300 dark:text-stone-600">/</span>
+              <span className="text-stone-900 dark:text-stone-100 flex items-center min-w-0">
                 <span className="truncate">
                   {displayItem?.label || "Select a tool"}
                 </span>
@@ -289,18 +288,12 @@ export default function Layout({ toast }) {
           <div className="absolute inset-x-0 flex justify-center pointer-events-none">
             <button
               onClick={() => setIsMenuOpen((prev) => !prev)}
-              className="pointer-events-auto flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-1.5 border border-stone-300/80 dark:border-stone-700 bg-white/80 dark:bg-stone-900 text-xs sm:text-sm font-mono tracking-tight hover:bg-stone-50 dark:hover:bg-stone-800 transition-colors"
+              className="pointer-events-auto flex items-center gap-2.5 pl-4 pr-4 sm:pr-1.5 py-1.5 rounded-full bg-white dark:bg-stone-800 text-[15px] hover:bg-mint dark:hover:bg-mint dark:hover:text-stone-900 transition-colors duration-300"
             >
-              <MagnifyingGlass
-                size={14}
-                weight="thin"
-                className="text-stone-500 dark:text-stone-300"
-              />
-              <span className="hidden sm:inline text-[11px] font-mono">
-                &gt; search tools
-              </span>
-              <span className="sm:hidden text-[11px] font-mono">&gt; tools</span>
-              <div className="hidden sm:flex items-center gap-1 text-[10px] sm:text-[11px] font-mono text-stone-600 dark:text-stone-400 px-2 py-[3px] border border-stone-400/60 dark:border-stone-600">
+              <MagnifyingGlass size={16} />
+              <span className="hidden sm:inline">Search tools</span>
+              <span className="sm:hidden">Tools</span>
+              <div className="hidden sm:flex items-center gap-0.5 text-xs px-2 py-1 rounded-full bg-stone-100 dark:bg-stone-900 dark:text-stone-100">
                 <Command size={12} weight="thin" />
                 <span>K</span>
               </div>
@@ -312,7 +305,7 @@ export default function Layout({ toast }) {
               <button
                 type="button"
                 onClick={handleInstall}
-                className="hidden sm:inline-flex items-center px-2.5 py-1.5 border border-stone-300 dark:border-stone-700 text-[11px] font-mono text-stone-700 dark:text-stone-200 hover:bg-stone-50 dark:hover:bg-stone-800 transition-colors"
+                className="hidden sm:inline-flex items-center px-4 py-2 rounded-full bg-white dark:bg-stone-800 text-[15px] hover:bg-mint dark:hover:text-stone-900 transition-colors duration-300"
               >
                 Install
               </button>
@@ -320,13 +313,10 @@ export default function Layout({ toast }) {
             <button
               type="button"
               onClick={toggleTheme}
-              className="flex items-center 
-              gap-2 p-2 border border-stone-300 
-              dark:border-stone-700  text-[11px] sm:text-xs font-mono 
-              text-slate-700 dark:text-stone-200 
-              hover:bg-stone-50 dark:hover:bg-stone-800 transition-colors"
+              aria-label="Toggle theme"
+              className="grid place-items-center size-10 rounded-full bg-stone-900 text-stone-100 dark:bg-stone-100 dark:text-stone-900 hover:bg-mint hover:text-stone-900 dark:hover:bg-mint transition-colors duration-300"
             >
-              <span className="relative flex items-center justify-center w-5 h-5  dark:text-stone-200  text-stone-900 overflow-hidden">
+              <span className="relative flex items-center justify-center w-5 h-5 overflow-hidden">
                 <span
                   className={`absolute inset-0 flex items-center justify-center transition-transform duration-200 ${
                     theme === "dark" ? "translate-y-0" : "translate-y-full"
@@ -342,14 +332,13 @@ export default function Layout({ toast }) {
                   <Sun size={14} />
                 </span>
               </span>
-             
             </button>
           </div>
         </div>
       </header>
 
       <div
-        className={`fixed inset-0 bg-stone-900/40  z-30 transition-opacity duration-300 ${
+        className={`fixed inset-0 bg-stone-900/40 z-30 transition-opacity duration-300 ${
           isMenuOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
@@ -358,43 +347,42 @@ export default function Layout({ toast }) {
       />
 
       <div
-        className={`fixed top-16 left-0 right-0 z-40 bg-white dark:bg-stone-900 border-b border-stone-200 dark:border-stone-800 transition-all duration-500 ease-out flex flex-col overflow-hidden ${
+        className={`fixed top-16 left-0 right-0 z-40 bg-stone-100 dark:bg-stone-900 rounded-b-3xl transition-all duration-500 ease-out flex flex-col overflow-hidden ${
           isMenuOpen
             ? "h-[calc(100dvh-4rem)] sm:h-[60vh] opacity-100 translate-y-0"
             : "h-0 opacity-0 -translate-y-4"
         }`}
       >
-        <div className="flex-shrink-0 p-4 sm:p-6 border-b border-stone-200 dark:border-stone-800/70">
+        <div className="flex-shrink-0 p-4 sm:p-6">
           <div className="relative max-w-2xl mx-auto">
             <MagnifyingGlass
-              className="absolute left-4 top-1/2 -translate-y-1/2 text-stone-400 dark:text-stone-500"
-              size={16}
-              weight="thin"
+              className="absolute left-5 top-1/2 -translate-y-1/2 text-stone-500"
+              size={18}
             />
             <input
               type="text"
-              placeholder="> search utilities (json, color, hash)"
+              placeholder="Search tools (json, color, hash)"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               ref={searchInputRef}
-              className="w-full pl-11 pr-4 py-2.5 bg-white dark:bg-stone-900 border border-stone-300 dark:border-stone-700 focus:outline-none focus:ring-1 focus:ring-stone-500 dark:focus:ring-stone-400 text-base sm:text-sm font-mono text-stone-900 dark:text-stone-100"
+              className="w-full pl-12 pr-5 py-3.5 !rounded-full bg-white dark:bg-stone-800 focus:outline-none focus:ring-2 focus:ring-stone-900 dark:focus:ring-mint text-base sm:text-[17px] text-stone-900 dark:text-stone-100 placeholder:text-stone-400"
             />
           </div>
         </div>
 
         <div className="flex-1 overflow-y-auto p-4 sm:p-6 custom-scrollbar">
-          <div className="max-w-5xl mx-auto space-y-8">
+          <div className="max-w-6xl mx-auto space-y-10">
             {displayedGroups.length === 0 ? (
-              <div className="text-center py-10 text-stone-500 dark:text-stone-400 text-sm font-mono">
+              <div className="text-center py-10 text-stone-500 dark:text-stone-400">
                 No utilities found matching "{searchQuery}"
               </div>
             ) : (
               displayedGroups.map((group) => (
-                <div key={group.name} className="space-y-2">
-                  <h3 className="text-[11px] font-mono tracking-[0.18em] text-stone-500 dark:text-stone-500 uppercase">
-                    //<span className="ml-2">{group.name}</span>
+                <div key={group.name} className="space-y-4">
+                  <h3 className="text-3xl tracking-[-0.045em] text-stone-900 dark:text-stone-50">
+                    {group.name}
                   </h3>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 border p-2 border-stone-200/60 dark:border-stone-900/80">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
                     {group.items.map((item) => {
                       const isFav = favoritePaths.includes(item.path);
                       const subtitleSource =
@@ -412,15 +400,15 @@ export default function Layout({ toast }) {
                               setIsMenuOpen(false);
                               setSearchQuery("");
                             }}
-                            className={`relative flex items-start gap-3 p-3 pr-11 text-left transition-all duration-150 group text-sm border border-stone-200 dark:border-stone-800 ${
+                            className={`relative flex items-start gap-3 p-4 pr-12 rounded-2xl text-left transition-colors duration-300 ${
                               location.pathname === item.path
-                                ? "bg-stone-700 text-stone-100 dark:bg-stone-300 dark:text-stone-900"
-                                : "bg-white text-slate-700 dark:bg-stone-900 dark:text-stone-300 hover:bg-stone-200 hover:text-stone-900"
+                                ? "bg-stone-900 text-stone-100 dark:bg-stone-100 dark:text-stone-900"
+                                : "bg-white text-stone-900 dark:bg-stone-800 dark:text-stone-100 hover:bg-mint dark:hover:bg-mint dark:hover:text-stone-900"
                             }`}
                           ><button
                           type="button"
                           onClick={(e) => toggleFavorite(item.path, e)}
-                          className="absolute top-2 right-2 z-10 p-1 rounded border border-transparent hover:border-stone-300 dark:hover:border-stone-600 hover:bg-stone-100/80 dark:hover:bg-stone-800/80 transition-colors"
+                          className="absolute top-3 right-3 z-10 p-1.5 rounded-full hover:bg-stone-900/10 transition-colors"
                           aria-label={
                             isFav
                               ? "Remove from favourites"
@@ -432,19 +420,17 @@ export default function Layout({ toast }) {
                             weight={isFav ? "fill" : "thin"}
                             className={
                               isFav
-                                ? "text-amber-500 dark:text-amber-400"
-                                : "text-stone-400 dark:text-stone-500"
+                                ? "text-current"
+                                : "text-current opacity-40"
                             }
                           />
                         </button>
-                            <div
-                              className={`px-2 py-1 flex-shrink-0 aspect-square justify-center items-center flex transition-colors border border-stone-300 dark:border-stone-700 text-[11px] font-mono `}
-                            >
-                              <item.icon size={14} weight="thin" />
+                            <div className="grid place-items-center size-9 shrink-0 rounded-full bg-stone-100 text-stone-900 dark:bg-stone-900 dark:text-stone-100">
+                              <item.icon size={18} />
                             </div>
                             <div className="min-w-0">
-                              {item.label}
-                              <div className="text-[11px] font-mono  leading-snug line-clamp-2">
+                              <div className="text-[17px] leading-tight">{item.label}</div>
+                              <div className="mt-1 text-sm leading-snug opacity-65 line-clamp-2">
                                 {item.description || subtitleSource}
                               </div>
                             </div>

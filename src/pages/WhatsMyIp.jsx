@@ -64,16 +64,16 @@ export default function WhatsMyIp({ onToast }) {
 
   return (
     <div className="max-w-3xl mx-auto animate-in fade-in slide-in-from-bottom-4 duration-500">
-      <header className="mb-12 text-center">
-        <h2 className="text-4xl font-black mb-2 tracking-tight text-stone-900 dark:text-stone-50">
+      <header className="mb-10">
+        <h2 className="text-[34px] sm:text-[50px] font-normal mb-4 tracking-[-0.055em] leading-[0.9] text-stone-900 dark:text-stone-50">
           What&apos;s my IP?
         </h2>
-        <p className="text-[13px] font-mono text-stone-500 dark:text-stone-400">
+        <p className="text-[17px] tracking-[-0.01em] text-stone-500 dark:text-stone-400">
           Your public IP address as seen from the internet.
         </p>
       </header>
 
-      <div className="bg-white dark:bg-stone-900 p-6 border border-stone-200 dark:border-stone-800 space-y-4">
+      <div className="bg-white dark:bg-stone-800 p-6 sm:p-8 rounded-3xl space-y-4">
         {!online && (
           <div className="p-4 bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 text-amber-800 dark:text-amber-200 text-sm font-mono">
             Needs network. Connect to look up your public IP.
@@ -97,7 +97,7 @@ export default function WhatsMyIp({ onToast }) {
             <div className="space-y-4">
               {ipv4 && (
                 <div>
-                  <label className="block text-[11px] font-mono text-stone-500 dark:text-stone-400 uppercase tracking-[0.18em] mb-2">
+                  <label className="block text-sm text-stone-500 dark:text-stone-400 mb-2">
                     IPv4
                   </label>
                   <CopyArea
@@ -108,7 +108,7 @@ export default function WhatsMyIp({ onToast }) {
               )}
               {ipv6 && (
                 <div>
-                  <label className="block text-[11px] font-mono text-stone-500 dark:text-stone-400 uppercase tracking-[0.18em] mb-2">
+                  <label className="block text-sm text-stone-500 dark:text-stone-400 mb-2">
                     IPv6
                   </label>
                   <CopyArea

@@ -424,11 +424,11 @@ export default function TimezoneConverter({ onToast }) {
 
   return (
     <div className="max-w-4xl mx-auto animate-in fade-in slide-in-from-bottom-4 duration-500">
-      <header className="mb-12 text-center">
-        <h2 className="text-4xl font-black mb-2 tracking-tight text-stone-900 dark:text-stone-50">
+      <header className="mb-10">
+        <h2 className="text-[34px] sm:text-[50px] font-normal mb-4 tracking-[-0.055em] leading-[0.9] text-stone-900 dark:text-stone-50">
           Timezone converter
         </h2>
-        <p className="text-[13px] font-mono text-stone-500 dark:text-stone-400">
+        <p className="text-[17px] tracking-[-0.01em] text-stone-500 dark:text-stone-400">
           One moment, two zones. Pick a moment and say whether it is wall-clock
           time in zone A or B. Searchable zone pickers with typical abbreviations
           (ET, CET, PST/PDT, etc.).
@@ -497,7 +497,7 @@ export default function TimezoneConverter({ onToast }) {
 
       <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
         <div className="bg-white dark:bg-stone-900 p-5 sm:p-6 border border-stone-200 dark:border-stone-800 flex flex-col gap-4">
-          <label className="text-[11px] font-mono text-stone-500 dark:text-stone-400 uppercase tracking-[0.18em]">
+          <label className="text-sm text-stone-500 dark:text-stone-400">
             Zone A
           </label>
           <TimezoneSelect
@@ -515,7 +515,7 @@ export default function TimezoneConverter({ onToast }) {
         </div>
 
         <div className="bg-white dark:bg-stone-900 p-5 sm:p-6 border border-stone-200 dark:border-stone-800 flex flex-col gap-4">
-          <label className="text-[11px] font-mono text-stone-500 dark:text-stone-400 uppercase tracking-[0.18em]">
+          <label className="text-sm text-stone-500 dark:text-stone-400">
             Zone B
           </label>
           <TimezoneSelect

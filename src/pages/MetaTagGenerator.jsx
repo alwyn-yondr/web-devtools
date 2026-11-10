@@ -63,16 +63,16 @@ export default function MetaTagGenerator({ onToast }) {
 
   return (
     <div className="max-w-3xl mx-auto animate-in fade-in slide-in-from-bottom-4 duration-500">
-      <header className="mb-12 text-center">
-        <h2 className="text-4xl font-black mb-2 tracking-tight text-stone-900 dark:text-stone-50">
+      <header className="mb-10">
+        <h2 className="text-[34px] sm:text-[50px] font-normal mb-4 tracking-[-0.055em] leading-[0.9] text-stone-900 dark:text-stone-50">
           Meta Tag Generator
         </h2>
-        <p className="text-[13px] font-mono text-stone-500 dark:text-stone-400">
+        <p className="text-[17px] tracking-[-0.01em] text-stone-500 dark:text-stone-400">
           Generate Open Graph and Twitter Card meta tags for SEO and social sharing.
         </p>
       </header>
 
-      <div className="bg-white dark:bg-stone-900 p-6 border border-stone-200 dark:border-stone-800 space-y-4">
+      <div className="bg-white dark:bg-stone-800 p-6 sm:p-8 rounded-3xl space-y-4">
         {[
           { key: "title", label: "Title", value: title, set: setTitle },
           { key: "description", label: "Description", value: description, set: setDescription },
@@ -82,7 +82,7 @@ export default function MetaTagGenerator({ onToast }) {
           { key: "twitterHandle", label: "Twitter handle (e.g. @username)", value: twitterHandle, set: setTwitterHandle },
         ].map(({ key, label, value, set }) => (
           <div key={key}>
-            <label className="block text-[11px] font-mono text-stone-500 dark:text-stone-400 uppercase tracking-[0.18em] mb-1">
+            <label className="block text-sm text-stone-500 dark:text-stone-400 mb-1">
               {label}
             </label>
             <input
@@ -97,7 +97,7 @@ export default function MetaTagGenerator({ onToast }) {
 
         {output && (
           <>
-            <label className="block text-[11px] font-mono text-stone-500 dark:text-stone-400 uppercase tracking-[0.18em] mb-2 mt-6">
+            <label className="block text-sm text-stone-500 dark:text-stone-400 mb-2 mt-6">
               Generated HTML
             </label>
             <CopyArea text={output} onCopySuccess={() => onToast("Copied!")} />

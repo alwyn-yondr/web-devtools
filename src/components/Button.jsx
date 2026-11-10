@@ -7,14 +7,14 @@ const Button = ({
   disabled = false,
 }) => {
   const baseStyle =
-    "flex cursor-pointer items-center justify-center gap-2 px-4 py-2 border font-mono text-xs tracking-tight transition-colors focus:outline-none focus:ring-1 focus:ring-stone-500 dark:focus:ring-stone-400 disabled:opacity-50 disabled:cursor-not-allowed";
+    "flex cursor-pointer items-center justify-center gap-2 px-5 py-2.5 rounded-full text-[15px] transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-stone-900 dark:focus-visible:ring-mint focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed";
   const variants = {
     primary:
-      "bg-stone-900 hover:bg-stone-800 text-stone-50 border-stone-900 dark:bg-stone-50 dark:hover:bg-stone-200 dark:text-stone-950 dark:border-stone-200",
+      "bg-stone-900 text-stone-100 hover:bg-mint hover:text-stone-900 dark:bg-stone-100 dark:text-stone-900 dark:hover:bg-mint",
     secondary:
-      "bg-stone-100 hover:bg-stone-200 text-stone-800 border-stone-300 dark:bg-stone-900 dark:hover:bg-stone-800 dark:text-stone-100 dark:border-stone-700",
+      "bg-stone-200 text-stone-900 hover:bg-mint dark:bg-stone-700 dark:text-stone-100 dark:hover:bg-mint dark:hover:text-stone-900",
     outline:
-      "border-stone-400 text-stone-700 hover:bg-stone-100 dark:border-stone-600 dark:text-stone-200 dark:hover:bg-stone-900",
+      "border border-stone-300 text-stone-900 hover:bg-mint hover:border-mint dark:border-stone-600 dark:text-stone-100 dark:hover:text-stone-900",
   };
 
   return (

@@ -4,7 +4,7 @@ export default function CopyPre({
   text,
   children,
   onCopySuccess,
-  className = "max-h-64 overflow-y-auto overflow-x-auto border border-stone-200 dark:border-stone-700 bg-stone-50 dark:bg-stone-950",
+  className = "max-h-64 overflow-y-auto overflow-x-auto rounded-2xl bg-stone-100 dark:bg-stone-900",
   preClassName = "px-4 pb-4 pt-0 font-mono text-stone-800 dark:text-stone-200 whitespace-pre-wrap break-all",
   title = "Copy to clipboard",
 }) {
@@ -20,7 +20,7 @@ export default function CopyPre({
             onCopySuccess={onCopySuccess}
             title={title}
             disabled={!copyText}
-            className="pointer-events-auto shadow-sm"
+            className="pointer-events-auto"
           />
         </div>
       </div>

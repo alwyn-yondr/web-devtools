@@ -1,6 +1,6 @@
 import { Marked } from "marked";
 
-const DIAGRAM_FONT = '"Space Grotesk", system-ui, sans-serif';
+const DIAGRAM_FONT = 'Roobert, system-ui, sans-serif';
 
 let renderQueue = Promise.resolve();
 let renderSeq = 0;

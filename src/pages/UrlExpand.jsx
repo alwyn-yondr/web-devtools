@@ -92,18 +92,18 @@ export default function UrlExpand() {
 
   return (
     <div className="max-w-3xl mx-auto animate-in fade-in slide-in-from-bottom-4 duration-500">
-      <header className="mb-12 text-center">
-        <h2 className="text-4xl font-black mb-2 tracking-tight text-stone-900 dark:text-stone-50">
+      <header className="mb-10">
+        <h2 className="text-[34px] sm:text-[50px] font-normal mb-4 tracking-[-0.055em] leading-[0.9] text-stone-900 dark:text-stone-50">
           URL redirect inspector
         </h2>
-        <p className="text-[13px] font-mono text-stone-500 dark:text-stone-400">
+        <p className="text-[17px] tracking-[-0.01em] text-stone-500 dark:text-stone-400">
           Paste <code className="text-stone-600 dark:text-stone-300">curl -IL</code>{" "}
           output for a full chain, or try in-browser fetch (often CORS-blocked).
         </p>
       </header>
 
       <div className="space-y-8">
-        <div className="bg-white dark:bg-stone-900 p-6 border border-stone-200 dark:border-stone-800 space-y-3">
+        <div className="bg-white dark:bg-stone-800 p-6 sm:p-8 rounded-3xl space-y-3">
           <h3 className="text-sm font-mono text-stone-700 dark:text-stone-300">
             From curl -IL (recommended)
           </h3>
@@ -141,7 +141,7 @@ export default function UrlExpand() {
           )}
         </div>
 
-        <div className="bg-white dark:bg-stone-900 p-6 border border-stone-200 dark:border-stone-800 space-y-3">
+        <div className="bg-white dark:bg-stone-800 p-6 sm:p-8 rounded-3xl space-y-3">
           <h3 className="text-sm font-mono text-stone-700 dark:text-stone-300">
             In-browser fetch (manual redirects)
           </h3>

@@ -44,7 +44,7 @@ function Avatar({ name, avatarUrl, online }) {
   if (showFallback) {
     return (
       <div
-        className="w-full h-full flex items-center justify-center bg-stone-200 dark:bg-stone-800 text-stone-700 dark:text-stone-200 text-3xl font-black tracking-tight"
+        className="w-full h-full flex items-center justify-center bg-stone-200 dark:bg-stone-800 text-stone-700 dark:text-stone-200 text-3xl font-medium tracking-tight"
         aria-label={`${name} avatar initials`}
       >
         {initialsFromName(name) || "?"}
@@ -78,11 +78,11 @@ export default function PersonaGenerator({ onToast }) {
 
   return (
     <div className="max-w-2xl mx-auto animate-in fade-in slide-in-from-bottom-4 duration-500">
-      <header className="mb-12 text-center">
-        <h2 className="text-4xl font-black mb-2 tracking-tight text-stone-900 dark:text-stone-50">
+      <header className="mb-10">
+        <h2 className="text-[34px] sm:text-[50px] font-normal mb-4 tracking-[-0.055em] leading-[0.9] text-stone-900 dark:text-stone-50">
           Persona
         </h2>
-        <p className="text-[13px] font-mono text-stone-500 dark:text-stone-400">
+        <p className="text-[17px] tracking-[-0.01em] text-stone-500 dark:text-stone-400">
           Quickly spin up fake personas for testing.
         </p>
       </header>
@@ -118,7 +118,7 @@ export default function PersonaGenerator({ onToast }) {
             { label: "Email", val: persona.email },
           ].map((field) => (
             <div key={field.label}>
-              <label className="text-[11px] font-mono text-stone-500 dark:text-stone-400 uppercase tracking-[0.18em]">
+              <label className="text-sm text-stone-500 dark:text-stone-400">
                 {field.label}
               </label>
               <div className="flex justify-between items-center bg-stone-50 dark:bg-stone-900 p-3 border border-stone-200 dark:border-stone-700 mt-1">

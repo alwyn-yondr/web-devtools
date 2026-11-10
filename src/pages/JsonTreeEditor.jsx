@@ -592,11 +592,11 @@ export default function JsonTreeEditor({ onToast }) {
   return (
     <div className="max-w-none w-full animate-in fade-in slide-in-from-bottom-4 duration-500">
       <header className="mb-8 text-center">
-        <h2 className="text-4xl font-black mb-2 tracking-tight text-stone-900 dark:text-stone-50 flex items-center justify-center gap-3">
+        <h2 className="text-[34px] sm:text-[50px] font-normal mb-4 tracking-[-0.055em] leading-[0.9] text-stone-900 dark:text-stone-50 flex items-center justify-center gap-3">
           <TreeStructure size={36} weight="thin" className="text-stone-500" />
           JSON Editor
         </h2>
-        <p className="text-[13px] font-mono text-stone-500 dark:text-stone-400 max-w-xl mx-auto">
+        <p className="text-[17px] tracking-[-0.01em] text-stone-500 dark:text-stone-400 max-w-xl mx-auto">
           Load JSON from a file or paste text, then edit keys and values, reorder,
           collapse, duplicate, or remove nodes. Live JSON appears on the right.
         </p>
@@ -612,7 +612,7 @@ export default function JsonTreeEditor({ onToast }) {
         onDragLeave={onDragLeave}
         onDrop={onDrop}
       >
-        <label className="block text-[11px] font-mono text-stone-500 dark:text-stone-400 uppercase tracking-[0.18em] mb-2">
+        <label className="block text-sm text-stone-500 dark:text-stone-400 mb-2">
           Drop a .json file or paste JSON
         </label>
         <textarea
@@ -654,7 +654,7 @@ export default function JsonTreeEditor({ onToast }) {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 items-start">
         <div className="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 min-h-[280px]">
-          <div className="px-3 py-2 border-b border-stone-200 dark:border-stone-800 text-[11px] font-mono uppercase tracking-[0.18em] text-stone-500 dark:text-stone-400">
+          <div className="px-3 py-2 border-b border-stone-200 dark:border-stone-800 text-sm text-stone-500 dark:text-stone-400">
             Tree
           </div>
           <div className="p-2 max-h-[min(70vh,900px)] overflow-y-auto custom-json-editor-scroll">
@@ -687,7 +687,7 @@ export default function JsonTreeEditor({ onToast }) {
         </div>
 
         <div className="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 min-h-[280px]">
-          <div className="px-3 py-2 border-b border-stone-200 dark:border-stone-800 text-[11px] font-mono uppercase tracking-[0.18em] text-stone-500 dark:text-stone-400">
+          <div className="px-3 py-2 border-b border-stone-200 dark:border-stone-800 text-sm text-stone-500 dark:text-stone-400">
             Output JSON
           </div>
           <div className="p-4">

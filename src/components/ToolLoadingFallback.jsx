@@ -15,11 +15,11 @@ export default function ToolLoadingFallback({ label }) {
         aria-hidden
       />
       <div className="text-center space-y-1.5">
-        <p className="text-sm font-mono text-stone-600 dark:text-stone-400">
+        <p className="text-sm text-stone-600 dark:text-stone-400">
           Loading module…
         </p>
         {label && (
-          <p className="text-xs font-mono text-stone-400 dark:text-stone-500">
+          <p className="text-xs text-stone-400 dark:text-stone-500">
             {label}
           </p>
         )}

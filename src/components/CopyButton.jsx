@@ -28,10 +28,10 @@ export default function CopyButton({
       disabled={disabled || !text}
       title={title}
       aria-label={title}
-      className={`p-2 border border-stone-300 dark:border-stone-700 bg-white dark:bg-stone-900 hover:bg-stone-100 dark:hover:bg-stone-800 text-stone-500 hover:text-stone-700 dark:hover:text-stone-300 transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${className}`}
+      className={`p-2 rounded-full bg-stone-900 text-stone-100 hover:bg-mint hover:text-stone-900 dark:bg-stone-100 dark:text-stone-900 dark:hover:bg-mint transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed ${className}`}
     >
       {copied ? (
-        <Check size={size} weight="thin" className="text-emerald-500" />
+        <Check size={size} weight="thin" className="text-mint dark:text-emerald-600" />
       ) : (
         <ClipboardText size={size} weight="thin" />
       )}
