@@ -84,6 +84,116 @@ body {
   }
 }
 
+/*
+ * yondr overrides for the tool pages. Unlayered CSS beats Tailwind's utility layer,
+ * so pages keep upstream's classes and merges from upstream stay conflict-free.
+ */
+main header.text-center {
+  margin-bottom: 2.5rem;
+  text-align: left;
+}
+
+main header > h2 {
+  margin-bottom: 1rem;
+  font-size: 34px;
+  font-weight: 400;
+  line-height: 0.9;
+  letter-spacing: -0.055em;
+}
+
+main header > h2.justify-center {
+  justify-content: flex-start;
+}
+
+main header > p {
+  margin-inline: 0;
+  font-family: var(--font-sans);
+  font-size: 17px;
+  letter-spacing: -0.01em;
+}
+
+main .font-black {
+  font-weight: 500;
+}
+
+main .bg-white.p-6.border-stone-200 {
+  border-color: transparent;
+  border-radius: 1.5rem;
+}
+
+.dark main .bg-white.p-6.border-stone-200 {
+  background-color: var(--color-stone-800);
+}
+
+main .text-\[11px\].font-mono.uppercase.tracking-\[0\.18em\] {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+/* Segmented tabs: a pill track with pill options. */
+main .flex.p-1.bg-stone-100:has(> button) {
+  border-color: transparent;
+  border-radius: 9999px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  letter-spacing: -0.01em;
+}
+
+main .flex.p-1.bg-stone-100.flex-wrap:has(> button) {
+  border-radius: 1.25rem;
+}
+
+main .flex.p-1.bg-stone-100 > button {
+  padding-inline: 1rem;
+  border-color: transparent;
+  border-radius: 9999px;
+}
+
+main .flex.p-1.bg-stone-100 > button:not(.bg-stone-900):hover {
+  background-color: var(--color-mint);
+  color: var(--color-stone-900);
+}
+
+/* Action buttons: pills, ink when primary, outlined otherwise, mint on hover. */
+main button.border:is([class*="px-4 py-"], [class*="px-5 py-"], [class*="px-6 py-"], [class*="px-8 py-"], [class*="w-full py-3"]) {
+  border-radius: 9999px;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  letter-spacing: -0.01em;
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+
+main button.border.bg-stone-900:is([class*="px-4 py-"], [class*="px-5 py-"], [class*="px-6 py-"], [class*="px-8 py-"], [class*="w-full py-3"]) {
+  border-color: transparent;
+}
+
+main button.border:is([class*="px-4 py-"], [class*="px-5 py-"], [class*="px-6 py-"], [class*="px-8 py-"], [class*="w-full py-3"]):not(.bg-stone-900) {
+  border-color: var(--color-stone-300);
+}
+
+.dark main button.border:is([class*="px-4 py-"], [class*="px-5 py-"], [class*="px-6 py-"], [class*="px-8 py-"], [class*="w-full py-3"]):not(.bg-stone-900) {
+  border-color: var(--color-stone-600);
+}
+
+main button.border:is([class*="px-4 py-"], [class*="px-5 py-"], [class*="px-6 py-"], [class*="px-8 py-"], [class*="w-full py-3"]):not(:disabled):hover {
+  border-color: var(--color-mint);
+  background-color: var(--color-mint);
+  color: var(--color-stone-900);
+  opacity: 1;
+}
+
+@media (min-width: 640px) {
+  main header > h2 {
+    font-size: 50px;
+  }
+
+  main .bg-white.p-6.border-stone-200 {
+    padding: 2rem;
+  }
+}
+
 html[data-live-page-gradient="on"] [data-app-shell] {
   background-image: var(--live-page-gradient);
   background-repeat: no-repeat;

@@ -320,7 +320,7 @@ export default function ScrollSanctifier({ onToast }) {
           <p className="text-[10px] sm:text-[11px] font-mono tracking-[0.35em] text-stone-500 dark:text-stone-500 uppercase">
             Rite of descent
           </p>
-          <h2 className="text-5xl sm:text-6xl font-medium tracking-tight text-stone-900 dark:text-stone-50 leading-none">
+          <h2 className="text-5xl sm:text-6xl font-black tracking-tight text-stone-900 dark:text-stone-50 leading-none">
             Scroll sanctifier
           </h2>
           <p className="text-sm sm:text-base font-mono text-stone-600 dark:text-stone-400 leading-relaxed max-w-2xl mx-auto">

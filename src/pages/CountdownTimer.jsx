@@ -110,7 +110,7 @@ export default function CountdownTimer() {
                 : "bg-black dark:bg-white text-white dark:text-black"
             }`}
           >
-            <p className="font-medium text-4xl sm:text-5xl tracking-tight text-center">
+            <p className="font-black text-4xl sm:text-5xl tracking-tight text-center">
               Time&apos;s up
             </p>
             <button
@@ -232,11 +232,11 @@ export default function CountdownTimer() {
 
       {!immersive && (
         <div className="max-w-2xl mx-auto animate-in fade-in slide-in-from-bottom-4 duration-500 relative">
-          <header className="mb-10">
-            <h2 className="text-[34px] sm:text-[50px] font-normal mb-4 tracking-[-0.055em] leading-[0.9] text-stone-900 dark:text-stone-50">
+          <header className="mb-12 text-center">
+            <h2 className="text-4xl font-black mb-2 tracking-tight text-stone-900 dark:text-stone-50">
               Countdown
             </h2>
-            <p className="text-[17px] tracking-[-0.01em] text-stone-500 dark:text-stone-400">
+            <p className="text-[13px] font-mono text-stone-500 dark:text-stone-400">
               Set hours, minutes, seconds. At zero the screen flashes until dismissed.
             </p>
             <button
@@ -249,7 +249,7 @@ export default function CountdownTimer() {
             </button>
           </header>
 
-          <div className="bg-white dark:bg-stone-800 p-6 sm:p-8 rounded-3xl space-y-8">
+          <div className="bg-white dark:bg-stone-900 p-6 border border-stone-200 dark:border-stone-800 space-y-8">
             <div className="grid grid-cols-3 gap-3 max-w-md mx-auto font-mono text-xs">
               <div>
                 <label className="block text-[11px] text-stone-500 dark:text-stone-400 uppercase tracking-[0.18em] mb-2">

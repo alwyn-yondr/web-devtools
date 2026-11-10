@@ -188,10 +188,10 @@ export default function SqlSchemaVisualizer({ onToast }) {
   return (
     <div className="max-w-none w-full mx-auto animate-in fade-in slide-in-from-bottom-4 duration-500">
       <header className="mb-8 text-center">
-        <h2 className="text-4xl font-medium tracking-tight text-stone-900 dark:text-stone-50">
+        <h2 className="text-4xl font-black tracking-tight text-stone-900 dark:text-stone-50">
           SQL Schema
         </h2>
-        <p className="text-[17px] tracking-[-0.01em] text-stone-500 dark:text-stone-400 mt-2 max-w-xl mx-auto">
+        <p className="text-[13px] font-mono text-stone-500 dark:text-stone-400 mt-2 max-w-xl mx-auto">
           Drop or paste DDL to explore tables, columns, relationships, and INSERT data.
         </p>
       </header>

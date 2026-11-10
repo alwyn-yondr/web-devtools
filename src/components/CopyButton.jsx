@@ -28,7 +28,7 @@ export default function CopyButton({
       disabled={disabled || !text}
       title={title}
       aria-label={title}
-      className={`p-2 rounded-full bg-stone-900 text-stone-100 hover:bg-mint hover:text-stone-900 dark:bg-stone-100 dark:text-stone-900 dark:hover:bg-mint transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed ${className}`}
+      className={`p-2 rounded-full bg-white text-stone-900 hover:bg-mint dark:bg-stone-100 dark:text-stone-900 dark:hover:bg-mint transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed ${className}`}
     >
       {copied ? (
         <Check size={size} weight="thin" className="text-mint dark:text-emerald-600" />

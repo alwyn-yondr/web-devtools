@@ -192,16 +192,16 @@ export default function JwtDebugger({ onToast }) {
 
   return (
     <div className="max-w-3xl mx-auto animate-in fade-in slide-in-from-bottom-4 duration-500">
-      <header className="mb-10">
-        <h2 className="text-[34px] sm:text-[50px] font-normal mb-4 tracking-[-0.055em] leading-[0.9] text-stone-900 dark:text-stone-50">
+      <header className="mb-12 text-center">
+        <h2 className="text-4xl font-black mb-2 tracking-tight text-stone-900 dark:text-stone-50">
           JWT Debugger
         </h2>
-        <p className="text-[17px] tracking-[-0.01em] text-stone-500 dark:text-stone-400">
+        <p className="text-[13px] font-mono text-stone-500 dark:text-stone-400">
           Decode, verify (HS256), and create signed JWTs (HS256 / RS256).
         </p>
       </header>
 
-      <div className="bg-white dark:bg-stone-800 p-6 sm:p-8 rounded-3xl space-y-6">
+      <div className="bg-white dark:bg-stone-900 p-6 border border-stone-200 dark:border-stone-800 space-y-6">
         <div className="flex gap-2 p-1 bg-stone-100 dark:bg-stone-900 border border-stone-300 dark:border-stone-700 w-max font-mono text-[11px]">
           {[
             { id: "decode", label: "Decode" },
@@ -227,7 +227,7 @@ export default function JwtDebugger({ onToast }) {
 
         {mode === "decode" && (
           <>
-            <label className="block text-sm text-stone-500 dark:text-stone-400 mb-2">
+            <label className="block text-[11px] font-mono text-stone-500 dark:text-stone-400 uppercase tracking-[0.18em] mb-2">
               JWT Token
             </label>
             <textarea
@@ -239,7 +239,7 @@ export default function JwtDebugger({ onToast }) {
 
             {decoded && decodeHeaderAlg === "HS256" && (
               <div className="space-y-2 p-4 border border-stone-200 dark:border-stone-700 bg-stone-50 dark:bg-stone-950/50">
-                <label className="block text-sm text-stone-500 dark:text-stone-400">
+                <label className="block text-[11px] font-mono text-stone-500 dark:text-stone-400 uppercase tracking-[0.18em]">
                   Verify HS256 signature
                 </label>
                 <input
@@ -278,7 +278,7 @@ export default function JwtDebugger({ onToast }) {
             {decoded && (
               <div className="space-y-4">
                 <div>
-                  <label className="text-sm text-stone-500 dark:text-stone-400 block mb-2">
+                  <label className="text-[11px] font-mono text-stone-500 dark:text-stone-400 uppercase tracking-[0.18em] block mb-2">
                     Header
                   </label>
                   <CopyPre
@@ -290,7 +290,7 @@ export default function JwtDebugger({ onToast }) {
                 </div>
 
                 <div>
-                  <label className="text-sm text-stone-500 dark:text-stone-400 block mb-2">
+                  <label className="text-[11px] font-mono text-stone-500 dark:text-stone-400 uppercase tracking-[0.18em] block mb-2">
                     Payload
                   </label>
                   <CopyPre
@@ -319,7 +319,7 @@ export default function JwtDebugger({ onToast }) {
                 </div>
 
                 <div>
-                  <label className="text-sm text-stone-500 dark:text-stone-400 block mb-2">
+                  <label className="text-[11px] font-mono text-stone-500 dark:text-stone-400 uppercase tracking-[0.18em] block mb-2">
                     Signature (Base64URL)
                   </label>
                   <CopyPre
@@ -337,7 +337,7 @@ export default function JwtDebugger({ onToast }) {
         {mode === "create" && (
           <>
             <div>
-              <label className="block text-sm text-stone-500 dark:text-stone-400 mb-2">
+              <label className="block text-[11px] font-mono text-stone-500 dark:text-stone-400 uppercase tracking-[0.18em] mb-2">
                 Header (JSON)
               </label>
               <textarea
@@ -354,7 +354,7 @@ export default function JwtDebugger({ onToast }) {
               </p>
             </div>
             <div>
-              <label className="block text-sm text-stone-500 dark:text-stone-400 mb-2">
+              <label className="block text-[11px] font-mono text-stone-500 dark:text-stone-400 uppercase tracking-[0.18em] mb-2">
                 Payload (JSON)
               </label>
               <div className="flex flex-wrap gap-2 mb-2">
@@ -387,7 +387,7 @@ export default function JwtDebugger({ onToast }) {
               </p>
             </div>
             <div>
-              <label className="block text-sm text-stone-500 dark:text-stone-400 mb-2">
+              <label className="block text-[11px] font-mono text-stone-500 dark:text-stone-400 uppercase tracking-[0.18em] mb-2">
                 Secret (HS256) or PKCS#8 PEM private key (RS256)
               </label>
               <textarea
@@ -413,7 +413,7 @@ export default function JwtDebugger({ onToast }) {
             </button>
             {createdToken && (
               <div>
-                <label className="text-sm text-stone-500 dark:text-stone-400 block mb-2">
+                <label className="text-[11px] font-mono text-stone-500 dark:text-stone-400 uppercase tracking-[0.18em] block mb-2">
                   Created Token
                 </label>
                 <CopyPre

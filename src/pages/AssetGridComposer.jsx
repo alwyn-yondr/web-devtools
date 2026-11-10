@@ -23,7 +23,7 @@ const INPUT_CLASS =
   "w-full px-3 py-2 bg-white dark:bg-stone-900 border border-stone-300 dark:border-stone-700 font-mono text-sm focus:outline-none focus:ring-1 focus:ring-stone-500 dark:focus:ring-stone-400 text-stone-900 dark:text-stone-100";
 
 const LABEL_CLASS =
-  "block text-sm text-stone-500 dark:text-stone-400 mb-2";
+  "block text-[11px] font-mono text-stone-500 dark:text-stone-400 uppercase tracking-[0.18em] mb-2";
 
 const ZERO_TRIM = { top: 0, bottom: 0, left: 0, right: 0 };
 
@@ -261,19 +261,19 @@ export default function AssetGridComposer({ onToast }) {
 
   return (
     <div className="max-w-4xl mx-auto animate-in fade-in slide-in-from-bottom-4 duration-500">
-      <header className="mb-10">
-        <h2 className="text-[34px] sm:text-[50px] font-normal mb-4 tracking-[-0.055em] leading-[0.9] text-stone-900 dark:text-stone-50">
+      <header className="mb-12 text-center">
+        <h2 className="text-4xl font-black mb-2 tracking-tight text-stone-900 dark:text-stone-50">
           Composition
         </h2>
-        <p className="text-[17px] tracking-[-0.01em] text-stone-500 dark:text-stone-400">
+        <p className="text-[13px] font-mono text-stone-500 dark:text-stone-400">
           Compose multiple images on one canvas and export PNG or JPG.
         </p>
       </header>
 
       <div className="space-y-6">
-        <section className="bg-white dark:bg-stone-800 p-6 sm:p-8 rounded-3xl space-y-4">
+        <section className="bg-white dark:bg-stone-900 p-6 border border-stone-200 dark:border-stone-800 space-y-4">
           <div className="flex items-center justify-between gap-3">
-            <h3 className="text-sm text-stone-500 dark:text-stone-400">
+            <h3 className="text-[11px] font-mono text-stone-500 dark:text-stone-400 uppercase tracking-[0.18em]">
               Images
             </h3>
             {images.length > 0 && (
@@ -374,8 +374,8 @@ export default function AssetGridComposer({ onToast }) {
           )}
         </section>
 
-        <section className="bg-white dark:bg-stone-800 p-6 sm:p-8 rounded-3xl space-y-5">
-          <h3 className="text-sm text-stone-500 dark:text-stone-400">
+        <section className="bg-white dark:bg-stone-900 p-6 border border-stone-200 dark:border-stone-800 space-y-5">
+          <h3 className="text-[11px] font-mono text-stone-500 dark:text-stone-400 uppercase tracking-[0.18em]">
             Settings
           </h3>
 
@@ -478,7 +478,7 @@ export default function AssetGridComposer({ onToast }) {
 
           <div>
             <div className="flex items-center justify-between gap-3 mb-2">
-              <p className="text-sm text-stone-500 dark:text-stone-400">
+              <p className="text-[11px] font-mono text-stone-500 dark:text-stone-400 uppercase tracking-[0.18em]">
                 Trim (px)
               </p>
               <button
@@ -536,9 +536,9 @@ export default function AssetGridComposer({ onToast }) {
           </div>
         </section>
 
-        <section className="bg-white dark:bg-stone-800 p-6 sm:p-8 rounded-3xl space-y-4">
+        <section className="bg-white dark:bg-stone-900 p-6 border border-stone-200 dark:border-stone-800 space-y-4">
           <div className="flex flex-wrap items-center justify-between gap-2">
-            <h3 className="text-sm text-stone-500 dark:text-stone-400">
+            <h3 className="text-[11px] font-mono text-stone-500 dark:text-stone-400 uppercase tracking-[0.18em]">
               Composition
             </h3>
             <div className="flex gap-4 items-center">

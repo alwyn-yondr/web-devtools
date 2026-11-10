@@ -138,10 +138,10 @@ export default function Stopwatch() {
       {!immersive && (
         <div className="w-full max-w-[100vw] mx-auto px-0 sm:px-0 animate-in fade-in slide-in-from-bottom-4 duration-500">
           <header className="mb-8 sm:mb-12 text-center px-4">
-            <h2 className="text-[34px] sm:text-[50px] font-normal mb-4 tracking-[-0.055em] leading-[0.9] text-stone-900 dark:text-stone-50">
+            <h2 className="text-4xl font-black mb-2 tracking-tight text-stone-900 dark:text-stone-50">
               Stopwatch
             </h2>
-            <p className="text-[17px] tracking-[-0.01em] text-stone-500 dark:text-stone-400">
+            <p className="text-[13px] font-mono text-stone-500 dark:text-stone-400">
               Start, pause, lap. High-resolution display.
             </p>
             <button
@@ -200,7 +200,7 @@ export default function Stopwatch() {
 
           {laps.length > 0 && (
             <div className="max-w-xl mx-auto px-4">
-              <h3 className="text-sm text-stone-500 dark:text-stone-400 mb-3">
+              <h3 className="text-[11px] font-mono uppercase tracking-[0.18em] text-stone-500 dark:text-stone-400 mb-3">
                 Laps
               </h3>
               <ul className="border border-stone-200 dark:border-stone-800 divide-y divide-stone-200 dark:divide-stone-800 bg-white dark:bg-stone-900 font-mono text-sm">

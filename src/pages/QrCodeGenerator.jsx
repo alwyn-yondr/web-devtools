@@ -159,16 +159,16 @@ export default function QrCodeGenerator({ onToast }) {
 
   return (
     <div className="max-w-3xl mx-auto animate-in fade-in slide-in-from-bottom-4 duration-500">
-      <header className="mb-10">
-        <h2 className="text-[34px] sm:text-[50px] font-normal mb-4 tracking-[-0.055em] leading-[0.9] text-stone-900 dark:text-stone-50">
+      <header className="mb-12 text-center">
+        <h2 className="text-4xl font-black mb-2 tracking-tight text-stone-900 dark:text-stone-50">
           QR Code
         </h2>
-        <p className="text-[17px] tracking-[-0.01em] text-stone-500 dark:text-stone-400">
+        <p className="text-[13px] font-mono text-stone-500 dark:text-stone-400">
           Generate a code from text, or read one from an image, clipboard, or camera.
         </p>
       </header>
 
-      <div className="bg-white dark:bg-stone-800 p-6 sm:p-8 rounded-3xl space-y-6">
+      <div className="bg-white dark:bg-stone-900 p-6 border border-stone-200 dark:border-stone-800 space-y-6">
         <div className="flex gap-2 p-1 bg-stone-100 dark:bg-stone-900 border border-stone-300 dark:border-stone-700 w-max font-mono text-[11px]">
           {DIRECTIONS.map((item) => (
             <button
@@ -209,7 +209,7 @@ export default function QrCodeGenerator({ onToast }) {
 
         {mode === "text" && (
           <div>
-            <label className="block text-sm text-stone-500 dark:text-stone-400 mb-2">
+            <label className="block text-[11px] font-mono text-stone-500 dark:text-stone-400 uppercase tracking-[0.18em] mb-2">
               Text
             </label>
             <textarea
@@ -233,7 +233,7 @@ export default function QrCodeGenerator({ onToast }) {
               { key: "address", label: "Address", span: 2 },
             ].map(({ key, label, span }) => (
               <div key={key} className={span === 2 ? "sm:col-span-2" : ""}>
-                <label className="block text-sm text-stone-500 dark:text-stone-400 mb-1">
+                <label className="block text-[11px] font-mono text-stone-500 dark:text-stone-400 uppercase tracking-[0.18em] mb-1">
                   {label}
                 </label>
                 <input
@@ -253,7 +253,7 @@ export default function QrCodeGenerator({ onToast }) {
         {mode === "wifi" && (
           <div className="space-y-4">
             <div>
-              <label className="block text-sm text-stone-500 dark:text-stone-400 mb-1">
+              <label className="block text-[11px] font-mono text-stone-500 dark:text-stone-400 uppercase tracking-[0.18em] mb-1">
                 Network name (SSID)
               </label>
               <input
@@ -267,7 +267,7 @@ export default function QrCodeGenerator({ onToast }) {
               />
             </div>
             <div>
-              <label className="block text-sm text-stone-500 dark:text-stone-400 mb-1">
+              <label className="block text-[11px] font-mono text-stone-500 dark:text-stone-400 uppercase tracking-[0.18em] mb-1">
                 Password
               </label>
               <input
@@ -282,7 +282,7 @@ export default function QrCodeGenerator({ onToast }) {
             </div>
             <div className="flex flex-wrap gap-4">
               <div>
-                <label className="block text-sm text-stone-500 dark:text-stone-400 mb-1">
+                <label className="block text-[11px] font-mono text-stone-500 dark:text-stone-400 uppercase tracking-[0.18em] mb-1">
                   Security
                 </label>
                 <select

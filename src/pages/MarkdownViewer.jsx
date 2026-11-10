@@ -113,10 +113,10 @@ export default function MarkdownViewer({ onToast }) {
     <div className={`mx-auto animate-in fade-in slide-in-from-bottom-4 duration-500 ${fullWidth ? "relative left-1/2 -translate-x-1/2 w-screen max-w-none px-4 sm:px-6" : "max-w-3xl"}`}>
       <header className="mb-12 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div className="text-center sm:text-left">
-          <h2 className="text-[34px] sm:text-[50px] font-normal mb-4 tracking-[-0.055em] leading-[0.9] text-stone-900 dark:text-stone-50">
+          <h2 className="text-4xl font-black mb-2 tracking-tight text-stone-900 dark:text-stone-50">
             Markdown Viewer
           </h2>
-          <p className="text-[17px] tracking-[-0.01em] text-stone-500 dark:text-stone-400">
+          <p className="text-[13px] font-mono text-stone-500 dark:text-stone-400">
             Drop a .md file or type markdown. Fenced mermaid blocks render as diagrams.
           </p>
         </div>
@@ -135,7 +135,7 @@ export default function MarkdownViewer({ onToast }) {
 
       <div className="space-y-6">
         <div>
-          <label className="block text-sm text-stone-500 dark:text-stone-400 mb-2">
+          <label className="block text-[11px] font-mono text-stone-500 dark:text-stone-400 uppercase tracking-[0.18em] mb-2">
             Markdown Input
           </label>
           <textarea

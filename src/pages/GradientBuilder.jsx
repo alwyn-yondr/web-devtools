@@ -462,7 +462,7 @@ export default function GradientBuilder({ onToast }) {
     return createPortal(
       <aside className="fixed top-16 right-0 bottom-0 z-20 w-[min(100vw-2.5rem,24rem)] overflow-y-auto border-l border-stone-200 dark:border-stone-800 bg-white/95 dark:bg-stone-950/95 p-4 space-y-4 shadow-xl">
         <div>
-          <h2 className="text-lg font-medium tracking-tight text-stone-900 dark:text-stone-50">
+          <h2 className="text-lg font-black tracking-tight text-stone-900 dark:text-stone-50">
             Gradient Builder
           </h2>
           <p className="text-[11px] font-mono text-stone-500 dark:text-stone-400">
@@ -478,16 +478,16 @@ export default function GradientBuilder({ onToast }) {
 
   return (
     <div className="max-w-4xl mx-auto animate-in fade-in slide-in-from-bottom-4 duration-500">
-      <header className="mb-10">
-        <h2 className="text-[34px] sm:text-[50px] font-normal mb-4 tracking-[-0.055em] leading-[0.9] text-stone-900 dark:text-stone-50">
+      <header className="mb-12 text-center">
+        <h2 className="text-4xl font-black mb-2 tracking-tight text-stone-900 dark:text-stone-50">
           Gradient Builder
         </h2>
-        <p className="text-[17px] tracking-[-0.01em] text-stone-500 dark:text-stone-400">
+        <p className="text-[13px] font-mono text-stone-500 dark:text-stone-400">
           Multi-layer gradients with stop opacity, position offset, and a live page background.
         </p>
       </header>
 
-      <div className="bg-white dark:bg-stone-800 p-6 sm:p-8 rounded-3xl space-y-6">
+      <div className="bg-white dark:bg-stone-900 p-6 border border-stone-200 dark:border-stone-800 space-y-6">
         {previewModeSwitch}
         <div
           className={`${PREVIEW_FRAME[previewMode]} border border-stone-200 dark:border-stone-700`}

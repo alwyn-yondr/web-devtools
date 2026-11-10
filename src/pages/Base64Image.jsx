@@ -64,16 +64,16 @@ export default function Base64Image({ onToast }) {
 
   return (
     <div className="max-w-3xl mx-auto animate-in fade-in slide-in-from-bottom-4 duration-500">
-      <header className="mb-10">
-        <h2 className="text-[34px] sm:text-[50px] font-normal mb-4 tracking-[-0.055em] leading-[0.9] text-stone-900 dark:text-stone-50">
+      <header className="mb-12 text-center">
+        <h2 className="text-4xl font-black mb-2 tracking-tight text-stone-900 dark:text-stone-50">
           Base64 Image Converter
         </h2>
-        <p className="text-[17px] tracking-[-0.01em] text-stone-500 dark:text-stone-400">
+        <p className="text-[13px] font-mono text-stone-500 dark:text-stone-400">
           Drag and drop an image to get the Base64 string for CSS or HTML.
         </p>
       </header>
 
-      <div className="bg-white dark:bg-stone-800 p-6 sm:p-8 rounded-3xl space-y-4">
+      <div className="bg-white dark:bg-stone-900 p-6 border border-stone-200 dark:border-stone-800 space-y-4">
         <div
           onDrop={handleDrop}
           onDragOver={handleDragOver}
